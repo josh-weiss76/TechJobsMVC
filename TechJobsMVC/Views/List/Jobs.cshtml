@@ -5,48 +5,44 @@
 
     <h1>@ViewBag.title</h1>
 
-    @{
-        //TODO #1: Use a loop to display job results in a table.
-    }
-
-
 </div>
 <body>
     @if (ViewBag.jobs.Count == 0)
     {
         <p>There were no jobs matching your criteria.</p>
     }
-    <p>There are @ViewBag.jobs.Count job listings.</p>
-    <table class="job-listing">
+    else
+    {
+        <p>There are @ViewBag.jobs.Count job listings.</p>
         @foreach (var job in ViewBag.jobs)
         {
-            <tr>
-                <th>ID: </th>
-                <td>@job.Id </td>
-            </tr>
-            <tr>
-                <th>Name: </th>
-                <td>@job.Name </td>
-            </tr>
-            <tr>
-                <th>Employer: </th>
-                <td>@job.Employer </td>
-            </tr>
-            <tr>
-                <th>Location: </th>
-                <td>@job.Location </td>
-            </tr>
-            <tr>
-                <th>Position Type: </th>
-                <td>job.PositionType </td>
-            </tr>
-            <tr>
-                <th>Core Competency: </th>
-                <td>job.CoreCompetency </td>
-            </tr>
+            <table class="job-listing">
+                <tr>
+                    <th>ID: </th>
+                    <td>@job.Id </td>
+                </tr>
+                <tr>
+                    <th>Name: </th>
+                    <td>@job.Name </td>
+                </tr>
+                <tr>
+                    <th>Employer: </th>
+                    <td>@job.Employer </td>
+                </tr>
+                <tr>
+                    <th>Location: </th>
+                    <td>@job.Location </td>
+                </tr>
+                <tr>
+                    <th>Position Type: </th>
+                    <td>@job.PositionType </td>
+                </tr>
+                <tr>
+                    <th>Core Competency: </th>
+                    <td>@job.CoreCompetency </td>
+                </tr>
+            </table>
             <br />
         }
-
-    </table>
-
+    }
 </body>
