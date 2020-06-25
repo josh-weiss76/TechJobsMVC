@@ -1,4 +1,7 @@
-﻿<div class="container body-content">
+﻿<head>
+    <link rel="stylesheet" href="site.css">
+</head>
+<div class="container body-content">
 
     <h1>@ViewBag.title</h1>
 
@@ -8,3 +11,42 @@
 
 
 </div>
+<body>
+    @if (ViewBag.jobs.Count == 0)
+    {
+        <p>There were no jobs matching your criteria.</p>
+    }
+    <p>There are @ViewBag.jobs.Count job listings.</p>
+    <table class="job-listing">
+        @foreach (var job in ViewBag.jobs)
+        {
+            <tr>
+                <th>ID: </th>
+                <td>@job.Id </td>
+            </tr>
+            <tr>
+                <th>Name: </th>
+                <td>@job.Name </td>
+            </tr>
+            <tr>
+                <th>Employer: </th>
+                <td>@job.Employer </td>
+            </tr>
+            <tr>
+                <th>Location: </th>
+                <td>@job.Location </td>
+            </tr>
+            <tr>
+                <th>Position Type: </th>
+                <td>job.PositionType </td>
+            </tr>
+            <tr>
+                <th>Core Competency: </th>
+                <td>job.CoreCompetency </td>
+            </tr>
+            <br />
+        }
+
+    </table>
+
+</body>
