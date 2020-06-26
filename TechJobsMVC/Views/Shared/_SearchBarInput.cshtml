@@ -1,0 +1,34 @@
+﻿<div class="container body-content">
+    <h1>@ViewBag.title</h1>
+
+    <form action="/search/results" method="post">
+
+        <h2>Search by:</h2>
+
+        <p>
+            <span>
+                <input type="radio" name="searchType" checked id="all" value="all" />
+                <label for="all">All</label>
+                <input type="radio" name="searchType" id="employer " value="employer" />
+                <label for="employer">Employer</label>
+                <input type="radio" name="searchType" id="location" value="location" />
+                <label for="location">Location</label>
+                <input type="radio" name="searchType" id="positionType" value="positionType" />
+                <label for="positionType">Position Type</label>
+                <input type="radio" name="searchType" id="coreCompetency" value="coreCompetency" />
+                <label for="coreCompetency">Skill</label>
+            </span>
+            
+        </p>
+
+        <p>
+            <label for="searchTerm">Keyword:</label>
+            <input type="text" name="searchTerm" id="searchTerm" />
+        </p>
+
+        <input type="submit" value="Search" />
+        @*<p>@ViewBag.columns.Count</p>*@
+    </form>
+    <hr />
+
+</div>
